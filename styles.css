@@ -1,7 +1,7 @@
 body {
     font-family: Calibri;
-    background-color: #1e1e1e; /* Fond sombre */
-    color: #ffffff; /* Texte en blanc */
+    background-color: #ffffff; /* Fond blanc */
+    color: #000000; /* Texte en noir */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,12 +12,34 @@ body {
 .chat-container {
     width: 95%;
     height: 95vh;
-    background-color: #2d2d2d; /* Fond sombre pour le conteneur */
+    background-color: #ffffff; /* Fond blanc pour le conteneur */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.header button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #0056b3;
 }
 
 #chat-box {
@@ -67,35 +89,35 @@ body {
     padding: 10px 15px;
     border-radius: 10px;
     position: relative;
-    background-color: #3a3a3a; /* Fond sombre pour les messages */
-    color: #ffffff; /* Texte en blanc */
-    border: 1px solid #444;
+    background-color: #f1f1f1; /* Fond clair pour les messages */
+    color: #000000; /* Texte en noir */
+    border: 1px solid #ddd;
 }
 
 .message.user .message-content {
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #f1f1f1;
+    color: #000000;
     border-bottom-right-radius: 0;
 }
 
 .message.ai .message-content {
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #f1f1f1;
+    color: #000000;
     border-bottom-left-radius: 0;
 }
 
 .input-container {
     display: flex;
     padding: 15px;
-    background-color: #2d2d2d;
-    border-top: 1px solid #444;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
     align-items: flex-end;
 }
 
 #user-input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #444;
+    border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
     font-size: 14px;
@@ -104,8 +126,8 @@ body {
     min-height: 40px;
     max-height: 150px;
     line-height: 1.5;
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #f1f1f1;
+    color: #000000;
 }
 
 #send-btn {
@@ -185,7 +207,7 @@ pre code .ansi-bright-white { color: #ffffff; }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
-    color: #ffffff; /* Texte en blanc */
+    color: #000000; /* Texte en noir */
 }
 
 h1 {
@@ -208,7 +230,7 @@ ul, ol {
 blockquote {
     border-left: 4px solid #007bff;
     padding-left: 10px;
-    color: #ffffff; /* Texte en blanc */
+    color: #000000; /* Texte en noir */
     margin: 10px 0;
 }
 
@@ -225,6 +247,7 @@ img {
     max-width: 100%;
     border-radius: 5px;
 }
+
 /* Pour les navigateurs WebKit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
     width: 2mm; /* Largeur de la scrollbar */

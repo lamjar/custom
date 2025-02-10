@@ -1,12 +1,15 @@
 const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
+const translateBtn = document.getElementById('translate-btn');
+const techBtn = document.getElementById('tech-btn');
 
 // Remplacez par votre clé API Gemini
 const apiKey = 'AIzaSyAL4GPw5_5mgrkqNXL_aXDioFkTX8qto08';
 const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey;
 
 let referenceCounter = 1; // Compteur pour les références
+let context = ''; // Contexte de recherche
 
 // Envoi du message via le bouton ou la touche Entrée
 sendBtn.addEventListener('click', sendMessage);
@@ -21,6 +24,16 @@ userInput.addEventListener('keydown', (e) => {
 userInput.addEventListener('input', () => {
     userInput.style.height = 'auto';
     userInput.style.height = `${userInput.scrollHeight}px`;
+});
+
+translateBtn.addEventListener('click', () => {
+    context = 'translation';
+    addMessage('ai', 'Mode traduction activé.');
+});
+
+techBtn.addEventListener('click', () => {
+    context = 'technical';
+    addMessage('ai', 'Mode sujets techniques activé.');
 });
 
 async function sendMessage() {
@@ -47,7 +60,7 @@ async function getAIResponse(userMessage) {
             },
             body: JSON.stringify({
                 contents: [{
-                    parts: [{text: userMessage}]
+                    parts: [{text: context + ' ' + userMessage}]
                 }]
             }),
         });
@@ -63,7 +76,6 @@ async function getAIResponse(userMessage) {
 function addMessage(sender, message) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
-
 
     const messageContent = document.createElement('div');
     messageContent.classList.add('message-content');
