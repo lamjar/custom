@@ -79,7 +79,7 @@ function addMessage(sender, message) {
 
     const messageContent = document.createElement('div');
     messageContent.classList.add('message-content');
-    messageContent.innerHTML = formatText(message); // Formater le texte brut
+    messageContent.innerHTML = formatMarkdown(message); // Formater le Markdown
     messageElement.appendChild(messageContent);
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
@@ -90,11 +90,9 @@ function addMessage(sender, message) {
     });
 }
 
-function formatText(message) {
-    // Convertir les sauts de ligne en <br> et les puces en listes
-    message = message.replace(/\n/g, '<br>');
-    message = message.replace(/^\s*-\s*(.*)$/gm, '<ul><li>$1</li></ul>');
-    return message;
+function formatMarkdown(message) {
+    // Utiliser marked.js pour convertir le Markdown en HTML
+    return marked.parse(message);
 }
 
 function addTypingIndicator() {

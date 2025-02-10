@@ -185,6 +185,45 @@ code {
     border-radius: 8px;
 }
 
+/* Styles Markdown */
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+ul, ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+    color: #333;
+    margin: 10px 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
 /* Pour les navigateurs WebKit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
     width: 2mm; /* Largeur de la scrollbar */
