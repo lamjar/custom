@@ -1,7 +1,7 @@
 body {
-    font-family: Calibri;
-    background-color: #ffffff; /* Fond blanc */
-    color: #000000; /* Texte en noir */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5; /* Fond clair */
+    color: #333; /* Texte sombre */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,22 +24,24 @@ body {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    background-color: #f1f1f1;
+    background-color: #007bff; /* Fond bleu pour le header */
     border-bottom: 1px solid #ddd;
 }
 
 .header button {
     margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 8px 15px;
+    background-color: #ffffff; /* Boutons blancs */
+    color: #007bff; /* Texte bleu */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .header button:hover {
-    background-color: #0056b3;
+    background-color: #f1f1f1; /* Fond gris clair au survol */
 }
 
 #chat-box {
@@ -49,6 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: #f9f9f9; /* Fond légèrement gris pour la zone de chat */
 }
 
 .message {
@@ -79,28 +82,31 @@ body {
 }
 
 .avatar.user {
-    background-color: #28a745;
+    background-color: #28a745; /* Avatar vert pour l'utilisateur */
     order: 2; /* Mettre l'avatar à droite pour l'utilisateur */
     margin-left: 10px;
 }
 
 .message-content {
     max-width: 70%;
-    padding: 10px 15px;
+    padding: 15px;
     border-radius: 10px;
     position: relative;
-    background-color: #f1f1f1; /* Fond clair pour les messages */
-    color: #000000; /* Texte en noir */
+    background-color: #ffffff; /* Fond blanc pour les messages */
+    color: #333; /* Texte sombre */
     border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .message.user .message-content {
-    background-color: #e3f2fd; /* Fond bleu clair pour les messages de l'utilisateur */
+    background-color: #007bff; /* Fond bleu pour les messages de l'utilisateur */
+    color: #ffffff; /* Texte blanc */
     border-bottom-right-radius: 0;
 }
 
 .message.ai .message-content {
-    background-color: #f1f1f1; /* Fond gris clair pour les messages de l'IA */
+    background-color: #ffffff; /* Fond blanc pour les messages de l'IA */
+    color: #333; /* Texte sombre */
     border-bottom-left-radius: 0;
 }
 
@@ -124,8 +130,8 @@ body {
     min-height: 40px;
     max-height: 150px;
     line-height: 1.5;
-    background-color: #f1f1f1;
-    color: #000000;
+    background-color: #f9f9f9; /* Fond légèrement gris pour l'input */
+    color: #333; /* Texte sombre */
 }
 
 #send-btn {
@@ -143,7 +149,7 @@ body {
 }
 
 #send-btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Bleu plus foncé au survol */
 }
 
 /* Animation pour les messages */
@@ -160,21 +166,21 @@ body {
 
 /* Styles pour les blocs de code */
 pre {
-    background-color: #f5f5f5; /* Fond clair pour les blocs de code */
+    background-color: #2d2d2d; /* Fond sombre pour les blocs de code */
     padding: 15px;
     border-radius: 8px;
     overflow-x: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #444;
     margin: 10px 0;
 }
 
 code {
     font-family: 'Courier New', Courier, monospace;
-    color: #d63384; /* Couleur par défaut pour le code inline */
+    color: #ffffff; /* Texte blanc dans les blocs de code */
 }
 
 .hljs {
-    background-color: #f5f5f5; /* Fond clair pour la coloration syntaxique */
+    background-color: #2d2d2d; /* Fond sombre pour la coloration syntaxique */
     padding: 15px;
     border-radius: 8px;
 }
