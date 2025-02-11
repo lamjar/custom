@@ -265,6 +265,8 @@ img {
 
     #user-input {
         max-height: 100px; /* Réduire la hauteur maximale de l'input */
+        width: 93%; /* Augmenter la largeur de l'input */
+        
     }
 
     .input-container{
