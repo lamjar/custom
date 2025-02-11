@@ -10,6 +10,7 @@ const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1
 
 let referenceCounter = 1; // Compteur pour les références
 let context = ''; // Contexte de recherche
+let conversationHistory = []; // Historique de la conversation
 
 // Envoi du message via le bouton ou la touche Entrée
 sendBtn.addEventListener('click', sendMessage);
@@ -48,6 +49,10 @@ async function sendMessage() {
         const aiMessage = await getAIResponse(userMessage);
         removeTypingIndicator(typingIndicator);
         addMessage('ai', aiMessage);
+
+        // Ajouter le message à l'historique de la conversation
+        conversationHistory.push({ role: 'user', content: userMessage });
+        conversationHistory.push({ role: 'ai', content: aiMessage });
     }
 }
 
@@ -59,9 +64,16 @@ async function getAIResponse(userMessage) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                contents: [{
-                    parts: [{text: context + ' ' + userMessage}]
-                }]
+                contents: [
+                    ...conversationHistory.map(msg => ({
+                        role: msg.role === 'user' ? 'user' : 'model',
+                        parts: [{ text: msg.content }],
+                    })),
+                    {
+                        role: 'user',
+                        parts: [{ text: context + ' ' + userMessage }],
+                    },
+                ],
             }),
         });
 
