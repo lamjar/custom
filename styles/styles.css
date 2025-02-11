@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri';
     background-color: #f5f5f5; /* Fond clair */
     color: #333; /* Texte sombre */
     display: flex;
@@ -24,15 +24,15 @@ body {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    background-color: #007bff; /* Fond bleu pour le header */
+    background-color: #9b9b9b; /* Fond bleu pour le header */
     border-bottom: 1px solid #ddd;
 }
 
 .header button {
     margin-left: 10px;
     padding: 8px 15px;
-    background-color: #ffffff; /* Boutons blancs */
-    color: #007bff; /* Texte bleu */
+    background-color: #9b9b9b; /* Boutons blancs */
+    color: #434344; /* Texte bleu */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -89,7 +89,7 @@ body {
 
 .message-content {
     max-width: 70%;
-    padding: 15px;
+    padding: 0px 10px 0px 10px;
     border-radius: 10px;
     position: relative;
     background-color: #ffffff; /* Fond blanc pour les messages */
@@ -99,8 +99,8 @@ body {
 }
 
 .message.user .message-content {
-    background-color: #007bff; /* Fond bleu pour les messages de l'utilisateur */
-    color: #ffffff; /* Texte blanc */
+    background-color: #e2e4e6; /* Fond bleu pour les messages de l'utilisateur */
+    color: #000000; /* Texte blanc */
     border-bottom-right-radius: 0;
 }
 

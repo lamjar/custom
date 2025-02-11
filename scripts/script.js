@@ -7,6 +7,7 @@ const techBtn = document.getElementById('tech-btn');
 // Remplacez par votre clé API Gemini
 const apiKey = 'AIzaSyAL4GPw5_5mgrkqNXL_aXDioFkTX8qto08';
 const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey;
+const errorMessage = "Désolé, une erreur s'est produite. Veuillez réessayer."
 
 let referenceCounter = 1; // Compteur pour les références
 let context = ''; // Contexte de recherche
@@ -52,7 +53,9 @@ async function sendMessage() {
 
         // Ajouter le message à l'historique de la conversation
         conversationHistory.push({ role: 'user', content: userMessage });
-        conversationHistory.push({ role: 'ai', content: aiMessage });
+        if(aiMessage != errorMessage){
+            conversationHistory.push({ role: 'ai', content: aiMessage });
+        }
     }
 }
 
@@ -81,7 +84,7 @@ async function getAIResponse(userMessage) {
         return data.candidates[0].content.parts[0].text;
     } catch (error) {
         console.error('Erreur lors de la récupération de la réponse de Gemini:', error);
-        return "Désolé, une erreur s'est produite. Veuillez réessayer.";
+        return errorMessage;
     }
 }
 
